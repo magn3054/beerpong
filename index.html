@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/index.js"></script>
+    <title>Beerpong Tournament | Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="teams">
+        <h2>Teams:</h2>
+        <section class="input-container">
+            <input type="text" id="teamInput" placeholder="Enter team name">
+            <button onclick="addTeam()">Add Team</button>
+            <ul id="teamList"></ul>
+        </section>
+        <section class="team-list">
+            <ol id="teamList"></ol>
+        </section>
+    </aside>
+    
+    <main class="tournament-tree" id="tournamentTree">
+        <h1>Tournament Generator</h1>
+        <button onclick="generateTournament()">Generate Tournament</button>
+    </main>
+
+    <aside class="statistics">
+        <table id="scoreTable">
+            <tr>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Losses</th>
+            </tr>
+        </table>
+    </aside>
+</body>
+</html>
+
+<!-- 
+align the delete buttons
+make the tree look better
+make a neww tree for the winners
+generate new round when first round is done
+flip tree position
+make logo (red cup)
+-->
