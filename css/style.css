@@ -1,48 +1,63 @@
 body {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
 .teams {
-    width: 20%;
+    width: 22%;
     border: blue 1px solid;
+    z-index: 1;
 
     & > h2 {
         text-align: center;
     }
-
+    
     & > section {
         flex-direction: column;
-        /* display: flex;
-        align-items: center;
-        margin-top: 20px; */
-
+        text-align: center;
+        
         & > input {
             justify-content: space-between;
         }
-
+        
         & > button {
             cursor: pointer;
         }
-
-        & > ul {
+        
+        & > #teamList {
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
-
-            > li {
-                justify-content: space-between;
-
+            text-align: start;
+            
+            & > .team-item {
+                border: red 1px solid;
+                display: flex;
+                align-items: center;
+                margin: 0.5rem 1rem;
+                
                 & > button {
                     cursor: pointer;
+                    border-radius: 25%;
+                    background-color: red;
+                    font-weight: bold;
+                    color: white;
+                }
+                
+                & > p {
+                    margin-left: 0.5rem;
                 }
             }
+
         }
     }
 }
 
 main {
-    width: 50%;
+    justify-self: center;
+    width: 33%;
     text-align: center;
     border: red 1px solid;
 
@@ -91,11 +106,15 @@ main {
 }
 
 .statistics {
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 33%;
     border: 2px solid blue;
     
     & > #scoreTable {
         position: sticky; 
+        width: 50%;
         top: 1rem;
         border-collapse: collapse;
 
@@ -105,6 +124,10 @@ main {
                 
                 & > th {
                     border-bottom: 2px solid rgb(0, 0, 0);
+
+                    &:first-of-type {
+                        text-align: left;
+                    }
                 }
 
             }
@@ -116,7 +139,7 @@ main {
 
                 & > td {
                     border-bottom: 1px solid #000;
-
+                    
                     &:not(:first-of-type) {
                         text-align: center;
                     }

@@ -26,19 +26,23 @@ function deleteTeam(index) {
     teams.splice(index, 1);
     updateTeamList();
     updateScoreTable();
+    generateTournament();
 }
 
 function updateTeamList() {
     const teamList = document.getElementById('teamList');
     teamList.innerHTML = '';
     teams.forEach((team, index) => {
-        const li = document.createElement('li');
-        li.textContent = team.name;
+        const classItem = document.createElement('div');
+        classItem.className = 'team-item';        
+        const p = document.createElement('p');
+        p.textContent = team.name;
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'X';
         deleteButton.onclick = () => deleteTeam(index);
-        li.appendChild(deleteButton);
-        teamList.appendChild(li);
+        classItem.appendChild(deleteButton);
+        classItem.appendChild(p);
+        teamList.appendChild(classItem);
     });
 }
 
@@ -46,7 +50,7 @@ function updateScoreTable() {
     const scoreTable = document.getElementById('scoreTable');
     scoreTable.innerHTML = `
         <thead><tr>
-            <th>Team</th>
+            <th>Teams</th>
             <th>Wins</th>
             <th>Losses</th>
         </tr></thead>
