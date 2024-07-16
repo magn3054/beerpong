@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ # Path to your code in the repository
-          server-dir:  beerpong/ # Path to the directory on my Simply.com server
+          server-dir:  tournament/ # Path to the directory on my Simply.com server
