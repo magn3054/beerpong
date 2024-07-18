@@ -3,6 +3,8 @@ body {
     justify-content: center;
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: #005500;
+    color: #eeeeee;
 }
 
 .teams {
@@ -17,13 +19,76 @@ body {
     & > section {
         flex-direction: column;
         text-align: center;
+        position: relative;
+        padding: 20px 0 0;
+        width: 100%;
+        max-width: 180px;
         
         & > input {
+            cursor: text;
             justify-content: space-between;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #eee;
+            outline: 0;
+            font-size: 17px;
+            color: #eee;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+            
+            &::placeholder {
+                color: transparent;
+            }
+            
+            &:placeholder-shown ~ .teamlabel {
+                font-size: 17px;
+                cursor: text;
+                top: 20px;
+            }
+            
+            &:focus {
+                padding-bottom: 6px;
+                font-weight: 700;
+                border-width: 3px;
+                border-image: linear-gradient(to left, #005500, #eee);
+                border-image-slice: 1;
+                transition: border-color 0.2s;
+            }
+            
+            &:focus ~ .teamlabel {
+                position: absolute;
+                top: 0;
+                display: block;
+                transition: 0.2s;
+                font-size: 17px;
+                font-weight: 700;
+                background: linear-gradient(to top, #005500, #eee);
+                background-clip: text;
+                color: transparent;
+            }
+            
+            &:focus ~ button {
+                display: none;
+                cursor: pointer;
+                background-color: purple;
+            }
+
         }
-        
+
+        & > .teamlabel {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 17px;
+          font-weight: 700;
+          color: #eee;
+          pointer-events: none;
+        }
+
         & > button {
-            cursor: pointer;
+        display: none;
         }
         
         & > #teamList {
